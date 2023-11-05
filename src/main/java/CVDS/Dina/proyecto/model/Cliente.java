@@ -35,7 +35,7 @@ public class Cliente {
     @Id
     @Column(name = "ID")
     @GeneratedValue( strategy = GenerationType.AUTO )
-    private Long id;
+    private Long clienteid;
 
     @Column(name = "FIRSTNAME")
     private String firstName;
@@ -72,11 +72,11 @@ public class Cliente {
 
 
     public Long getId() {
-        return this.id;
+        return this.clienteid;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.clienteid = id;
     }
 
     public String getFirstName() {
@@ -143,12 +143,12 @@ public class Cliente {
             return false;
         }
         Cliente cliente = (Cliente) o;
-        return id == cliente.id && firstName == cliente.firstName && lastName == cliente.lastName && Objects.equals(comidaPreferidaUno, cliente.comidaPreferidaUno) && Objects.equals(comidaPreferidaDos, cliente.comidaPreferidaDos) && Objects.equals(comidaPreferidaTres, cliente.comidaPreferidaTres) && Objects.equals(futurasComidas, cliente.futurasComidas) && Objects.equals(alergias, cliente.alergias);
+        return clienteid == cliente.clienteid && firstName == cliente.firstName && lastName == cliente.lastName && Objects.equals(comidaPreferidaUno, cliente.comidaPreferidaUno) && Objects.equals(comidaPreferidaDos, cliente.comidaPreferidaDos) && Objects.equals(comidaPreferidaTres, cliente.comidaPreferidaTres) && Objects.equals(futurasComidas, cliente.futurasComidas) && Objects.equals(alergias, cliente.alergias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, comidaPreferidaUno, comidaPreferidaDos, comidaPreferidaTres, futurasComidas, alergias);
+        return Objects.hash(clienteid, firstName, lastName, comidaPreferidaUno, comidaPreferidaDos, comidaPreferidaTres, futurasComidas, alergias);
     }
 
     @Override

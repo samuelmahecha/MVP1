@@ -9,6 +9,6 @@ import CVDS.Dina.proyecto.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    public List<Cliente> findByClienteid(Long clienteid);
+    public List<Cliente> findByClienteid(Long id);
 
 }
