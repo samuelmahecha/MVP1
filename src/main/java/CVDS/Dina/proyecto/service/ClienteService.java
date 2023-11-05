@@ -38,7 +38,7 @@ public class ClienteService {
     }
 
     public Cliente updateCliente(Cliente cliente) {
-        if (clienteRepository.findByClienteid(cliente.getId()).size() == 0) {
+        if (clienteRepository.findByClienteid(cliente.getClienteid()).size() == 0) {
             return clienteRepository.save(cliente);
         }
 

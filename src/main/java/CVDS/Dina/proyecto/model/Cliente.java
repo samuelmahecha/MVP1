@@ -1,7 +1,6 @@
 package CVDS.Dina.proyecto.model;
 
 import java.util.List;
-import java.util.Objects;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -37,6 +36,12 @@ public class Cliente {
     @GeneratedValue( strategy = GenerationType.AUTO )
     private Long clienteid;
 
+    @Column(name = "NICKNAME")
+    private String nickname;
+
+    @Column(name = "PASSWORD")
+    private String password;
+
     @Column(name = "FIRSTNAME")
     private String firstName;
 
@@ -60,10 +65,6 @@ public class Cliente {
     @Column(name = "Alergia", nullable = false)
     private List<String> alergias;
 
-    
-    
-
-
     public Cliente(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -71,12 +72,29 @@ public class Cliente {
 
 
 
-    public Long getId() {
+
+    public Long getClienteid() {
         return this.clienteid;
     }
 
-    public void setId(Long id) {
-        this.clienteid = id;
+    public void setClienteid(Long clienteid) {
+        this.clienteid = clienteid;
+    }
+
+    public String getNickname() {
+        return this.nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -134,36 +152,92 @@ public class Cliente {
     public void setAlergias(List<String> alergias) {
         this.alergias = alergias;
     }
- 
+
+
+
+
     @Override
-    public boolean equals(Object o) {
-        if (o == this)
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        if (!(o instanceof Cliente)) {
+        if (obj == null)
             return false;
-        }
-        Cliente cliente = (Cliente) o;
-        return clienteid == cliente.clienteid && firstName == cliente.firstName && lastName == cliente.lastName && Objects.equals(comidaPreferidaUno, cliente.comidaPreferidaUno) && Objects.equals(comidaPreferidaDos, cliente.comidaPreferidaDos) && Objects.equals(comidaPreferidaTres, cliente.comidaPreferidaTres) && Objects.equals(futurasComidas, cliente.futurasComidas) && Objects.equals(alergias, cliente.alergias);
+        if (getClass() != obj.getClass())
+            return false;
+        Cliente other = (Cliente) obj;
+        if (clienteid == null) {
+            if (other.clienteid != null)
+                return false;
+        } else if (!clienteid.equals(other.clienteid))
+            return false;
+        if (nickname == null) {
+            if (other.nickname != null)
+                return false;
+        } else if (!nickname.equals(other.nickname))
+            return false;
+        if (password == null) {
+            if (other.password != null)
+                return false;
+        } else if (!password.equals(other.password))
+            return false;
+        if (firstName == null) {
+            if (other.firstName != null)
+                return false;
+        } else if (!firstName.equals(other.firstName))
+            return false;
+        if (lastName == null) {
+            if (other.lastName != null)
+                return false;
+        } else if (!lastName.equals(other.lastName))
+            return false;
+        if (comidaPreferidaUno == null) {
+            if (other.comidaPreferidaUno != null)
+                return false;
+        } else if (!comidaPreferidaUno.equals(other.comidaPreferidaUno))
+            return false;
+        if (comidaPreferidaDos == null) {
+            if (other.comidaPreferidaDos != null)
+                return false;
+        } else if (!comidaPreferidaDos.equals(other.comidaPreferidaDos))
+            return false;
+        if (comidaPreferidaTres == null) {
+            if (other.comidaPreferidaTres != null)
+                return false;
+        } else if (!comidaPreferidaTres.equals(other.comidaPreferidaTres))
+            return false;
+        if (futurasComidas == null) {
+            if (other.futurasComidas != null)
+                return false;
+        } else if (!futurasComidas.equals(other.futurasComidas))
+            return false;
+        if (alergias == null) {
+            if (other.alergias != null)
+                return false;
+        } else if (!alergias.equals(other.alergias))
+            return false;
+        return true;
     }
+
+
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(clienteid, firstName, lastName, comidaPreferidaUno, comidaPreferidaDos, comidaPreferidaTres, futurasComidas, alergias);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((clienteid == null) ? 0 : clienteid.hashCode());
+        result = prime * result + ((nickname == null) ? 0 : nickname.hashCode());
+        result = prime * result + ((password == null) ? 0 : password.hashCode());
+        result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+        result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+        result = prime * result + ((comidaPreferidaUno == null) ? 0 : comidaPreferidaUno.hashCode());
+        result = prime * result + ((comidaPreferidaDos == null) ? 0 : comidaPreferidaDos.hashCode());
+        result = prime * result + ((comidaPreferidaTres == null) ? 0 : comidaPreferidaTres.hashCode());
+        result = prime * result + ((futurasComidas == null) ? 0 : futurasComidas.hashCode());
+        result = prime * result + ((alergias == null) ? 0 : alergias.hashCode());
+        return result;
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", firstName='" + getFirstName() + "'" +
-            ", lastName='" + getLastName() + "'" +
-            ", comidaPreferidaUno='" + getComidaPreferidaUno() + "'" +
-            ", comidaPreferidaDos='" + getComidaPreferidaDos() + "'" +
-            ", comidaPreferidaTres='" + getComidaPreferidaTres() + "'" +
-            ", futurasComidas='" + getFuturasComidas() + "'" +
-            ", alergias='" + getAlergias() + "'" +
-            "}";
-    }
+    
 
 
 }
