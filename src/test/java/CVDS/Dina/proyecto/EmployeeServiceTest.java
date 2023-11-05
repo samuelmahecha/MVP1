@@ -6,6 +6,20 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+
+
+
+/*
+ * DISCLAIMER
+ * 
+ *      ESTA CLASE PRESENTA UN EJEMPLO DE COMO HACER LAS RESPECTIVAS PRUEBAS AL SERVICIO.
+ * 
+ */
+
+
+
+
+
 //import co.edu.escuelaing.cvds.lab7.model.Employee;
 //import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
 
