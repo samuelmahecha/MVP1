@@ -24,13 +24,15 @@ public class ClienteController {
         return "creacion";
     }
     @RequestMapping(value="/crearcuenta", method = RequestMethod.POST)
-    public String asignarCuenta(String fname, String lname, String nickname,String pass, String comidaPreferida1, String comidaPreferida2, String comidaPreferida3){
+    public String asignarCuenta(String fname, String lname, String nickname,String pass, String comidaPreferida1, String comidaPreferida2, String comidaPreferida3, String tipoid, int cedula){
         Cliente cliente = new Cliente(fname, lname);
         cliente.setNickname(nickname);
         cliente.setPassword(pass);
         cliente.setComidaPreferidaUno(comidaPreferida1);
         cliente.setComidaPreferidaDos(comidaPreferida2);
         cliente.setComidaPreferidaTres(comidaPreferida3);
+        cliente.setTipoId(tipoid);
+        cliente.setCedula(cedula);
         clienteService.addCliente(cliente);
         return "creacion";
     }

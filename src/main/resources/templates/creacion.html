@@ -5,10 +5,18 @@
     
     <div>
         <form action="/crearcuenta" method="post">
-            <label for="fname">Primer Nombre:</label><br>
+            <label for="fname">Nombres:</label><br>
             <input type="text" id="fname" name="fname" value=""><br>
-            <label for="lname">Segundo Nombre:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe"><br>
+            <label for="lname">Apellidos:</label><br>
+            <input type="text" id="lname" name="lname" value=""><br>
+            <input list="tipoid" name="tipoid">
+            <datalist id="tipoid">
+              <option value="Cedula">
+              <option value="Tarjeta de identidad">
+              <option value="Pasaporte">
+            </datalist>
+            <label for="cedula">Cedula: </label><br>
+            <input type="number" id="cedula" name="cedula" value=""><br>
             <label for="nickname">Nombre de Usuario:</label><br>
             <input type="text" id="nickname" name="nickname" value=""><br>
             <label for="pass">Contraseña:</label><br>

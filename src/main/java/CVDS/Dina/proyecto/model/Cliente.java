@@ -52,7 +52,7 @@ public class Cliente {
     private String comidaPreferidaUno;
 
     @Column( name = "COMIDAPREFERIDA2" )
-    private String comidaPreferidaDos; 
+    private String comidaPreferidaDos;
 
     @Column( name = "COMIDAPREFERIDA3" )
     private String comidaPreferidaTres;
@@ -60,6 +60,12 @@ public class Cliente {
     @Column (name = "FUTURASCOMIDAS")
     private String futurasComidas;
     
+    @Column(name = "TIPOID")
+    private String tipoId;
+
+    @Column(name = "CEDULA")
+    private int cedula;
+
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(name="ALERGIAS", joinColumns= @JoinColumn(name = "personaId"))
     @Column(name = "Alergia", nullable = false)
@@ -153,8 +159,23 @@ public class Cliente {
         this.alergias = alergias;
     }
 
+    public String getTipoId(){
+        return this.tipoId;
+    }
 
+    public void setTipoId(String tipoId) {
+        this.tipoId = tipoId;
+    }
 
+    public int getCedula(){
+        return this.cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -237,7 +258,10 @@ public class Cliente {
         result = prime * result + ((alergias == null) ? 0 : alergias.hashCode());
         return result;
     }
-    
+
+
+
+
 
 
 }
