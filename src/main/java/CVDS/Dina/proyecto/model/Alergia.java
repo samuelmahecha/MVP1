@@ -24,9 +24,6 @@ public class Alergia {
     @Column(name = "Nombre")
     private String name;
 
-    
-
-
     public Alergia() {
     }
 

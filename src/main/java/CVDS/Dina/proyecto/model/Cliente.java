@@ -65,15 +65,15 @@ public class Cliente {
     private int cedula;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+    private List<Pedido> pedidos;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Alergia> alergias;
 
     public Cliente(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
-
 
     public Long getClienteid() {
         return this.clienteid;

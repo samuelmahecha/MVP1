@@ -1,68 +1,125 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
+<head>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    
-    <div>
+
+    <div class="container mt-5">
         <form action="/crearcuenta" method="post">
-            <label for="fname">Nombres:</label><br>
-            <input type="text" id="fname" name="fname" value=""><br>
-            <label for="lname">Apellidos:</label><br>
-            <input type="text" id="lname" name="lname" value=""><br>
-            <input list="tipoid" name="tipoid">
-            <datalist id="tipoid">
-              <option value="Cedula">
-              <option value="Tarjeta de identidad">
-              <option value="Pasaporte">
-            </datalist>
-            <label for="cedula">Cedula: </label><br>
-            <input type="number" id="cedula" name="cedula" value=""><br>
-            <label for="nickname">Nombre de Usuario:</label><br>
-            <input type="text" id="nickname" name="nickname" value=""><br>
-            <label for="pass">Contraseña:</label><br>
-            <input type="text" id="pass" name="pass" value=""><br>
-            <label for="comidaPreferida1">Primera Comida favorita:</label><br>
-            <input type="text" id="comidaPreferida1" name="comidaPreferida1" value=""><br>
-            <label for="comidaPreferida2">Segunda Comida favorita:</label><br>
-            <input type="text" id="comidaPreferida2" name="comidaPreferida2" value=""><br>
-            <label for="comidaPreferida3">Tercera comida preferida:</label><br>
-            <input type="text" id="comidaPreferida3" name="comidaPreferida3" value=""><br>
-            <label for="alergias">Alergias Alimenticias:</label>
-            <br>
-            <input type="checkbox" id="alergia1" name="selectedAllergies" value="Maní">
-            <label for="alergia1">Maní</label>
-            <br>
-            <input type="checkbox" id="alergia2" name="selectedAllergies" value="Mariscos">
-            <label for="alergia2">Mariscos</label>
-            <br>
-            <input type="checkbox" id="alergia3" name="selectedAllergies" value="Frutos Rojos">
-            <label for="alergia3">Frutos Rojos</label>
-            <br>
-            <input type="checkbox" id="alergia4" name="selectedAllergies" value="Huevo">
-            <label for="alergia4">Huevo</label>
-            <br>
-            <input type="checkbox" id="alergia5" name="selectedAllergies" value="Leche">
-            <label for="alergia5">Leche</label>
-            <br>
-            <input type="checkbox" id="alergia6" name="selectedAllergies" value="Soya">
-            <label for="alergia6">Soya</label>
-            <br>
-            <input type="checkbox" id="alergia7" name="selectedAllergies" value="Gluten">
-            <label for="alergia7">Gluten</label>
-            <br>
-            <input type="checkbox" id="alergia8" name="selectedAllergies" value="Nueces">
-            <label for="alergia8">Nueces</label>
-            <br>
-            <input type="checkbox" id="alergia9" name="selectedAllergies" value="Adivitos">
-            <label for="alergia9">Adivitos</label>
-            <br>
-            <input type="checkbox" id="alergia10" name="selectedAllergies" value="similiares al polen">
-            <label for="alergia10">Alimentos similiares al polen </label>
-            <br>
-            <input type="checkbox" id="alergia11" name="selectedAllergies" value="Alimentos Crudos">
-            <label for="alergia11">Alimentos Crudos</label>
-            <input type="submit" value="Submit">
+
+            <!-- Bootstrap form-group class for styling labels and inputs -->
+            <div class="form-group">
+                <label for="fname">Nombres:</label>
+                <input type="text" class="form-control" id="fname" name="fname" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Apellidos:</label>
+                <input type="text" class="form-control" id="lname" name="lname" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="tipoid">Tipo de ID:</label>
+                <select class="form-control" id="tipoid" name="tipoid">
+                    <option value="Cedula">Cedula</option>
+                    <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cedula">Numero ID:</label>
+                <input type="number" class="form-control" id="cedula" name="cedula" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="nickname">Nombre de Usuario:</label>
+                <input type="text" class="form-control" id="nickname" name="nickname" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="pass">Contraseña:</label>
+                <input type="password" class="form-control" id="pass" name="pass" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="comidaPreferida1">Primera Comida favorita:</label>
+                <input type="text" class="form-control" id="comidaPreferida1" name="comidaPreferida1" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="comidaPreferida2">Segunda Comida favorita:</label>
+                <input type="text" class="form-control" id="comidaPreferida2" name="comidaPreferida2" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="comidaPreferida3">Tercera comida preferida:</label>
+                <input type="text" class="form-control" id="comidaPreferida3" name="comidaPreferida3" value="">
+            </div>
+
+            <div class="form-group">
+                <label>Alergias Alimenticias:</label>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia1" name="selectedAllergies" value="Maní">
+                    <label class="form-check-label" for="alergia1">Maní</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia2" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia2">Mariscos</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia3" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia3">Frutos Rojos</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia4" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia4">Huevo</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia5" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia5"> Leche</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia6" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia6">Soya</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia7" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia7">Gluten</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia8" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia8">Nueces</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia9" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia9">Aditivos</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia10" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia10">Alimentos similares al polen</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="alergia11" name="selectedAllergies" value="Mariscos">
+                    <label class="form-check-label" for="alergia11">Alimentos Crudos</label>
+                </div>
+                <!-- ... Repeat the above structure for other checkboxes ... -->
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
         </form>
     </div>
+
+    <!-- Include Bootstrap JS and Popper.js (optional, for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
