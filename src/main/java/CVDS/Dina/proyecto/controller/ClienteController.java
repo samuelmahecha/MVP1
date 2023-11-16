@@ -26,7 +26,7 @@ public class ClienteController {
 
     @GetMapping("/prueba")
     public String cargarDatos(){
-        return "index";
+        return "menu";
     }
     @GetMapping("/crearcuenta")
     public String crearCuenta(){
