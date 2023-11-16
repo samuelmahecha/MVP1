@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
     <div class="container mt-5">
         <form action="/crearcuenta" method="post">
-
-            <!-- Bootstrap form-group class for styling labels and inputs -->
             <div class="form-group">
                 <label for="fname">Nombres:</label>
                 <input type="text" class="form-control" id="fname" name="fname" value="">
@@ -107,8 +104,6 @@
                     <input type="checkbox" class="form-check-input" id="alergia11" name="selectedAllergies" value="Mariscos">
                     <label class="form-check-label" for="alergia11">Alimentos Crudos</label>
                 </div>
-                <!-- ... Repeat the above structure for other checkboxes ... -->
-
             </div>
 
             <div class="form-group">
@@ -116,8 +111,6 @@
             </div>
         </form>
     </div>
-
-    <!-- Include Bootstrap JS and Popper.js (optional, for Bootstrap features) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

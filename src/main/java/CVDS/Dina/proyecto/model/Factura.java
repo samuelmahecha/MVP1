@@ -132,5 +132,9 @@ public class Factura {
                 + ", pedido=" + pedido + "]";
     }
 
+    public Object getFacturaid() {
+        return null;
+    }
+
     
 }

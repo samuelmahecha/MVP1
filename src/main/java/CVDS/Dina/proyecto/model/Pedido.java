@@ -15,8 +15,8 @@ public class Pedido {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name= "PedidoId")
-    private Long PedidoId;
+    @Column(name= "pedidoId")
+    private Long pedidoId;
 
     @ManyToOne
     @JoinColumn(name = "IdCliente")
@@ -36,7 +36,7 @@ public class Pedido {
     private Factura factura;
 
     public Pedido(Long pedidoId, Cliente cliente, String nombreRestaurante, String nombreComida, int valor) {
-        PedidoId = pedidoId;
+        this.pedidoId = pedidoId;
         this.cliente = cliente;
         this.nombreRestaurante = nombreRestaurante;
         this.nombreComida = nombreComida;
@@ -46,12 +46,12 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Long getPedidoId() {
-        return PedidoId;
+    public Long getpedidoId() {
+        return pedidoId;
     }
 
-    public void setPedidoId(Long pedidoId) {
-        PedidoId = pedidoId;
+    public void setpedidoId(Long pedidoId) {
+        this.pedidoId = pedidoId;
     }
 
     public Cliente getCliente() {
@@ -98,7 +98,7 @@ public class Pedido {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((PedidoId == null) ? 0 : PedidoId.hashCode());
+        result = prime * result + ((pedidoId == null) ? 0 : pedidoId.hashCode());
         result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
         result = prime * result + ((nombreRestaurante == null) ? 0 : nombreRestaurante.hashCode());
         result = prime * result + ((nombreComida == null) ? 0 : nombreComida.hashCode());
@@ -116,10 +116,10 @@ public class Pedido {
         if (getClass() != obj.getClass())
             return false;
         Pedido other = (Pedido) obj;
-        if (PedidoId == null) {
-            if (other.PedidoId != null)
+        if (pedidoId == null) {
+            if (other.pedidoId != null)
                 return false;
-        } else if (!PedidoId.equals(other.PedidoId))
+        } else if (!pedidoId.equals(other.pedidoId))
             return false;
         if (cliente == null) {
             if (other.cliente != null)
@@ -148,9 +148,8 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido [PedidoId=" + PedidoId + ", cliente=" + cliente + ", nombreRestaurante=" + nombreRestaurante
+        return "Pedido [pedidoId=" + pedidoId + ", cliente=" + cliente + ", nombreRestaurante=" + nombreRestaurante
                 + ", nombreComida=" + nombreComida + ", valor=" + valor + ", factura=" + factura + "]";
     }
 
-    
 }
